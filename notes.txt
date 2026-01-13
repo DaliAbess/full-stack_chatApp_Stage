@@ -1,6 +1,32 @@
-docker run -d \
+###0.add .env file on backend 
+MONGODB_URI=mongodb://mongoadmin:secret@localhost:27017/dbname?authSource=admin
+JWT_SECRET=your_jwt_secret_key
+PORT=5001
+
+
+
+###1run docker mongo db local
+ docker run -d \
   -p 27017:27017 \
   --name mongo \
   -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
   -e MONGO_INITDB_ROOT_PASSWORD=secret \
   mongo:latest
+####if using wsl on windows and try to run npm and nodejs
+
+export PATH=/usr/local/bin:/usr/bin:$PATH
+
+source ~/.bashrc
+
+####2.run application frontend 
+
+cd frontend
+npm install 
+npm run dev
+####3.run application backend 
+
+cd backend 
+npm install
+npm start 
+#####4.Go to browser 5173 port of localhost
+
