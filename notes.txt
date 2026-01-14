@@ -4,6 +4,7 @@ JWT_SECRET=your_jwt_secret_key
 PORT=5001
 
 
+###sudo docker run --name mongo -d -p 27017:27017 mongo:4.4
 
 ###1run docker mongo db local
  docker run -d \
