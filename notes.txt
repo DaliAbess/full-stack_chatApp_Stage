@@ -31,3 +31,4 @@ npm install
 npm start 
 #####4.Go to browser 5173 port of localhost
 
+####mongodb image from docker hub : 8.2.3
