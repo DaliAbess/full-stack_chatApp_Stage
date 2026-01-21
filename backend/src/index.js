@@ -18,21 +18,11 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(cors({
   origin: function (origin, callback) {
-    const allowedOrigins = [
-      'http://localhost:5173',
-      'http://localhost:3000'
-    ];
-    
-    // Allow any ngrok-free.app domain
-    if (!origin || 
-        allowedOrigins.includes(origin) || 
-        (origin && origin.endsWith('.ngrok-free.app'))) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
+    // Accept all origins
+    callback(null, true);
   },
   credentials: true
 }));
